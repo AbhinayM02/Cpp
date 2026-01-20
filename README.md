@@ -1,2 +1,2 @@
-# C-
+
 Daily Practice

@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+class Calculator{
+  private:
+    int a,b;
+  public:
+    void read(){
+      cin>>a>>b;
+    }
+    int addition(){
+      return a+b;
+    }
+    int multi(){
+      return a*b;
+    }
+    float div(){
+      return a/b;
+    }
+    int sub(){
+      return a-b;
+    }
+};
+  
+int main(){
+  Calculator p;
+  cout<<"Enter the numbers\n";
+  p.getmarks();
+  cout<<"addition:"<<p.addition()<<endl;
+cout<<"subtraction:"<<p.sub()<<endl;
+  cout<<"multiplication"<<p.multi()<<endl;
+  cout<<"division"<<p.div()<<endl;
+  
+  return 0;
+}

@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+class Employee{
+	private :
+		int empid;
+		string name;
+	public :
+		float basic_salary , total_salary;
+		void Employee_Details(Employee a){
+			cout << "Enter Employee Name : ";
+			cin >> name;
+			cout << "Enter Employee ID : ";
+			cin >> empid;
+			cout << "Enter Employee Salary : ";
+			cin >> basic_salary;
+		}
+		void Calculate_Salary(Employee a){
+			total_salary = basic_salary;
+		}
+		void display_employee_details(Employee a){
+			cout << "\n\nEmployee ID : " << empid << endl;
+			cout << "Employee Name : " << name << endl;
+			cout << "Employee Basic Salary : " << basic_salary << endl;
+			cout << "Employee Total Salary : " << total_salary << endl;
+		}
+};
+class Manager : public Employee{
+	private :
+		float allowance,t;
+	public :
+		void Get_Manager_Details(Manager m){
+			cout << "Enter Allowance : ";
+			cin >> allowance;
+		} 
+		void Calclate_Manager_salary(Manager m){
+			t = basic_salary + allowance;
+		}
+		void display_manager_details(Manager m){
+			cout << "Manager Total Salary : " << t << endl;
+		}
+};
+int main ()
+{
+	Employee e;
+	Manager f;
+	e.Employee_Details(e);
+	f.Get_Manager_Details(f);
+	e.Calculate_Salary(e);
+	f.Calclate_Manager_salary(f);
+	e.display_employee_details(e);
+	f.display_manager_details(f);
+	return 0; 
+}

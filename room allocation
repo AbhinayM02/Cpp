@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+class Hostelroom{
+	private:
+		
+	public:
+		int room[5];
+		char st[5][20];
+		int isoccupied[5]={0,0,0,0,0};              
+		void allocate(){
+			for(int r=0;r<5;r++){
+				if(isoccupied[r]==0){
+					cout<<"Enter name ";
+					cin>>st[r];
+					cout<<"alloted room: "<<r+1;
+					isoccupied[r]=1;
+					break;
+				}
+			}
+		}
+		void vacate(){
+			int a;
+			cout<<"enter the room no."<<endl;
+			cin>>a;
+			isoccupied[a-1]=0;
+		}
+		void display(){
+			for(int i=0;i<5;i++){
+				if(isoccupied[i]==0){
+					cout<<"room no. "<<i+1<<" is unoccupied\n";
+				}
+				else{
+					
+					cout<<"room no. "<<i+1<<" is occupied by "<<st[i]<<endl;
+				}
+			}
+		}
+};
+int main(){
+	Hostelroom a;
+	int b;
+	sp:
+	cout<<"\n1.Allocation\n";
+	cout<<"2.Vacate\n";
+	cout<<"3.display\n";
+	cout<<"4.exit\n";
+	
+	cin >> b;
+	switch(b){
+		case 1: a.allocate();
+				goto sp;
+				break;
+				
+		case 2: a.vacate();
+				goto sp;
+				break;
+				
+		case 3: a.display();
+				goto sp;
+				break;
+				
+		case 4: break;
+		
+		default: cout<<"Enter properly\n";
+				 goto sp;
+				
+	}
+	return 0;
+} 
